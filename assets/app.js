@@ -24,7 +24,10 @@ function displayGif() {
       topicDiv.append(pOne);
 
       //make a for loop
-      var image = $("<img>").attr("src", response.data[i].images.fixed_height_still.url);
+      var image = $("<img>");
+      image.attr("data-still", response.data[i].images.fixed_height_still.url);
+      image.attr("data-animate", response.data[i].images.fixed_height.url);
+      image.attr("src", response.data[i].images.fixed_height_still.url);
       console.log(response);
 
       topicDiv.append(image);
